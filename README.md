@@ -1,5 +1,15 @@
 # elasticsearch examples
 
+First of all pull docker image:
+
+> docker pull docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+  
+Seond, run docker:
+
+> docker run -p 9300:9300 -p 9200:9200 docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+
+Now start with CRUD operations
+
 ## Create new index and properties mappging.
 
 ### Request
