@@ -43,7 +43,7 @@ Now start with CRUD operations
 
 ### Request
 
-http://localhost:9200/_cat/indices
+> http://localhost:9200/_cat/indices
 
 ### Response
 
