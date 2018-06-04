@@ -150,7 +150,7 @@ green  open .monitoring-es-6-2018.05.29 rtrWxymcRe-p9SogkIC32w 1 0 318 55 392.3k
 ## Multiple search
 
 ```
-> GET spider/annuncio/_search
+> GET index/type/_search
 > {
 >   "query": {
 >     "bool": {
