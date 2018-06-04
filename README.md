@@ -2,11 +2,15 @@
 
 First of all pull docker image:
 
+```
 > docker pull docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+```
   
 Seond, run docker:
 
+```
 > docker run -p 9300:9300 -p 9200:9200 docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+```
 
 Now start with CRUD operations
 
@@ -43,7 +47,9 @@ Now start with CRUD operations
 
 ### Request
 
+```
 > http://localhost:9200/_cat/indices
+```
 
 ### Response
 
@@ -84,7 +90,9 @@ green  open .monitoring-es-6-2018.05.29 rtrWxymcRe-p9SogkIC32w 1 0 318 55 392.3k
 
 ### Request
 
+```
 > GET http://localhost:9200/indice/_doc/2
+```
 
 ### Response
 
@@ -149,6 +157,8 @@ green  open .monitoring-es-6-2018.05.29 rtrWxymcRe-p9SogkIC32w 1 0 318 55 392.3k
 
 ## Multiple search
 
+### Request
+
 ```
 > GET index/type/_search
 > {
@@ -169,4 +179,13 @@ green  open .monitoring-es-6-2018.05.29 rtrWxymcRe-p9SogkIC32w 1 0 318 55 392.3k
 >     }
 >   }
 > }
+```
+
+## Pagination
+
+### Limit and offset
+
+```
+> GET index/type/_search?size=10
+> GET index/type/_search?size=10&from=42
 ```
