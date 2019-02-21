@@ -1,11 +1,17 @@
-# elasticsearch examples
+# Elasticsearch
+
+## Introduction
+
+ES provides a REST interface to read and write data. In this repository I'll
+list a couple of snippet or information to start to play with ES. We'll use ES
+inside a docker machine.
 
 First of all pull docker image:
 
 ```
 > docker pull docker.elastic.co/elasticsearch/elasticsearch:6.2.4
 ```
-  
+
 Second, run docker:
 
 ```
@@ -17,6 +23,8 @@ Now start with CRUD operations
 ## Create new index and properties mapping.
 
 ### Request
+
+An index is created just adding a resource.
 
 ```
 >  PUT http://localhost:9200/indice
