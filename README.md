@@ -3,8 +3,11 @@
 ## Introduction
 
 ES provides a REST interface to read and write data. In this repository I'll
-list a couple of snippet or information to start to play with ES. We'll use ES
-inside a docker machine.
+list a couple of snippet or information to start to play with ES.
+
+## Install with docker
+
+We'll use ES inside a docker machine.
 
 First of all pull docker image:
 

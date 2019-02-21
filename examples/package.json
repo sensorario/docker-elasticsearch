@@ -1,0 +1,14 @@
+{
+  "name": "elastic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simone Gentili <sensorario@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "elasticsearch": "^15.4.1"
+  }
+}
