@@ -2,6 +2,9 @@
 
 ## Retrieve all data from the index
 
+The following is a simple query to get all data stored in the index
+`address-book`.
+
     GET address-book/_search
     {
       "query": {
@@ -9,11 +12,33 @@
       }
     }
 
-## get the mapping
+## Get the mapping
+
+This query return the mapped data.
 
     GET address-book/_mapping/contact
 
-## delete all the index
+The `dob` type is in the format `yyyy-mm-dd` and auto-mapped as `date` type.
+
+    {
+      "address-book": {
+        "mappings": {
+          "contact": {
+            "properties": {
+              "contact": {
+                "properties": {
+                  "dob": {
+                    "type": "date"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+## Delete all the index
 
     DELETE /address-book/
 
@@ -29,13 +54,13 @@
       }
     }
 
-## send full person data
+## Send full person data
 
     POST /address-book/contact/1
     {
       "contact": {
-        "dob": "1982-09-10",
-        "name": "Simone"
+        "name": "Simone",
+        "dob": "1982-09-10"
       }
     }
 
@@ -51,7 +76,11 @@
 
     DELETE /address-book/
 
-## Search witha field typed
+## Search with a typed field
+
+This kind of search is not possible with `contact.dob` as text. The type MUST
+BE a date field type. To be a field, the format should be `yyyy-mm-dd` or
+forced using `_mapping` action.
 
     POST address-book/contact/_search
     {
@@ -75,6 +104,8 @@
       }
     }
 
+## Get mapping
+
     GET address-book/_mapping/contact
 
 ## Create index
@@ -83,6 +114,9 @@ The body part is mandatory!
 
     POST address-book/contact
     {}
+
+Here instructions to define the schema and the `contract` that define the
+format and the type of `contact` properties.
 
     PUT address-book/_mapping/contact
     {
@@ -94,6 +128,8 @@ The body part is mandatory!
     }
 
 ## Invalid date format
+
+Request is "valid", but `dop` won't be mapped as `date`.
 
     POST /address-book/contact/1
     {
